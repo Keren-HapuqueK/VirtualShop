@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<div class="container mt-4">
+    <h1 class="text-center">Bem vindo ao nosso E-commerce! Você foi logado com sucesso.</h1>
+  </div>
+  <!-- Cards Section -->
+  <div class="section-cards">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card 1</h5>
+              <p class="card-text">Exemplo de card 1</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card 2</h5>
+              <p class="card-text">Exemplo de card 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Exemplo de card 1.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+{% else %}
+<div class="login-prompt">
+    <div class="text-center">
+        <h2>Sejam Bem-vindos!</h2>
+        <p>Por favor, realize o login ou registre-se para continuar.</p>
+        <div class="mt-4">
+            <a href="signIn" class="btn btn-primary mr-2">Login</a>
+            <a href="signUp" class="btn btn-success">Registrar-se</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
